@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -5754,12 +5754,22 @@ Weighted Avg.    0.829    0.254    0.826      0.829    0.826      0.598    0.878
 							</div>
 						</div>
 					</div>
+          <div class="row">
+						<div class="col s12 center">
+							<h3><i class="mdi-content-send brown-text"></i></h3>
+							<p class="left-align light">
+								<img src="img/grafico3.png" height="810px" width="1300px">
+							</p>
+						</div>
+					</div>
 					<div class="row">
 						<div class="col s12 center">
 							<h3><i class="mdi-content-send brown-text"></i></h3>
 							<p class="left-align light">
-								Como é possível visualizar, a árvore da esquerda é menor e o desempenho melhor o que indica que para este dataset
-								a modificação de tal parâmetro teve um impacto levemente melhor
+								Como é possível visualizar, o maior valor médio de precisão foi o encontrado nas árvores com atributos selecinados (as duas últimas)
+                É provavel que isso se dê pois quando os atributos excedentes são excluídos a árvore de decisão é menor e o problema de overfitting é menor.
+                Nas duas últimas árvores tanto pruned quanto unpruned obtiveram o mesmo valor, provavelmente por possuírem um número de ramificações limitados
+                a "poda" não chegou a ser necessária.
 							</p>
 						</div>
 					</div>
@@ -5772,48 +5782,10 @@ Weighted Avg.    0.829    0.254    0.826      0.829    0.826      0.598    0.878
 				<div class="container">
 					<div class="row center">
 						<h2 class="header col s12 light">Gini</h2>
-						<h5> Outra medida bastante conhecida é o Gini, a qual emprega um índice de dispersão
-estatística proposto em 1912 pelo estatístico italiano Corrado Gini. Este índice é muito
+						<h5> O algoritmo CART utiliza a medida Gini, um índice de dispersão
+estatístico proposto em 1912 pelo estatístico italiano Corrado Gini. Este índice é muito
 utilizado em análises econômicas e sociais, por exemplo, para quantificar a
-distribuição de renda em um certo país.
-Ele é utilizado no algoritmo CART (BREIMAN et al., 1984). Para um problema de c
-classes, o giniindex é definido pela Equação (4), na forma:
-( ) ( ) ∑
-=
-= −
-c
-i
-index gini p i
-1
-nó 1 / nó (4)
-• Assim como no cálculo do ganho de informação, basta calcular a diferença entre o
-giniindex antes e após a divisão. Essa diferença, Gini, é representada pela Equação (5):
-( ) ( )
-∑ ( )
-=
-
-
-
-
-
-
-= −
-n
-j
-index j
-j
-index gini v
-N
-N v
-Gini gini
-1
-pai (5)
-onde n é o número de valores do atributo, ou seja, o número de nós-filhos, N é o
-número total de objetos do nó-pai e ( )j N v é o número de exemplos associados ao nófilho
-j
-v .
-• Assim, é selecionado o atributo que gerar um maior valor para Gini.
-• Para outras medidas, consultar ROKACH & MAIMON (2008).  </h5>
+distribuição de renda em um certo país.</h5>
 					</div>
 				</div>
 			</div>
@@ -5826,19 +5798,19 @@ v .
 					<div class="col s12 center">
 						<h4>Weka Simple Cart</h4>
 						<p class="left-align light">
-							blablabla algoritmo
+							CART ou Classification And Regression Tree (árvore de classificação e regressão) é um algoritmo usado na mineração de dados que usa dois conceitos principais:
+							A análise da árvore de classificação é feita quando o resultado previsto é a classe à qual os dados pertencem.
+							A análise de árvore de regressão é quando o resultado previsto pode ser considerado um número real
+							(por exemplo, o preço de uma casa ou o tempo de permanência de um paciente em um hospital).
+							Esse algoritmo usa a métrica de Gini para dividir as categorias em grupos separados.
 						</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col s6 left">
-						<h6> Simple Cart Use Prune = True com todos os atributos
-						<a class="waves-effect waves-light btn right yellow darken-2" onclick="action('j48prunedall')"><i class="material-icons right"> photo_size_select_actual</i>Ver</a>
+						<h6> Simple Cart pruned tree com todos os atributos
 						</h6>
 						<div class="row">
-						</div>
-						<div class="row hidden" id="481" style="overflow-x: scroll;">
-							<img src="img/j48prunedall.png" style="height: 400px; overflow: scroll;">
 						</div>
 						<div id="4811" style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
 							<p class="left-align light" style="white-space:pre">=== Run information ===
@@ -5910,15 +5882,11 @@ Weighted Avg.    0.832    0.227    0.831      0.832    0.831      0.612    0.877
 					</div>
 					
 					<div class="col s6 right">
-						<h6> Simple Cart Use Prune = False com todos os atributos
-						<a class="waves-effect waves-light btn right red" onclick="action('j48unprunedall')"><i class="material-icons right"> photo_size_select_actual</i>Ver</a>
+						<h6> Simple Cart unpruned tree com todos os atributos
 						</h6>
 						<div class="row">
 						</div>
-						<div class="row hidden" id="482"  style="overflow-x: scroll;">
-							<img src="img/j48unprunedall.png" style="height: 400px; overflow: scroll;">
-						</div>
-						<div id="4822" style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
+						<div style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
 							<p class="left-align light" style="white-space:pre">=== Run information ===
 
 Scheme:       weka.classifiers.trees.SimpleCart -M 2.0 -N 5 -U -C 1.0 -S 1
@@ -6032,15 +6000,11 @@ Weighted Avg.    0.800    0.247    0.802      0.800    0.801      0.547    0.798
 					</div>
 					<div class="row">
 						<div class="col s6 left">
-							<h6> Simple Cart Use Prune = True tree com atributos selecionados
-							<a class="waves-effect waves-light btn right green accent-4" onclick="action('j48prunedonly')"><i class="material-icons right"> photo_size_select_actual</i>Ver</a>
+							<h6> Simple Cart pruned tree com atributos selecionados
 						</h6>
 						<div class="row">
 						</div>
-						<div class="row hidden" id="483" style="overflow-x: scroll;">
-							<img src="img/j48prunedonly.png" style="height: 400px; overflow: scroll;">
-						</div>
-							<div id="4833" style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
+							<div style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
 								<p class="left-align light" style="white-space:pre">=== Run information ===
 
 Scheme:       weka.classifiers.trees.SimpleCart -M 2.0 -N 5 -C 1.0 -S 1
@@ -6100,15 +6064,10 @@ Weighted Avg.    0.826    0.245    0.823      0.826    0.824      0.594    0.846
 							</div>
 						</div>
 						<div class="col s6 right">
-							<h6> Simple Cart Use Prune = False tree com atributos selecionados
-							<a class="waves-effect waves-light btn right blue" onclick="action('j48unprunedonly')"><i class="material-icons right"> photo_size_select_actual</i>Ver</a>
-							</h6>
+							<h6> Simple Cart unpruned tree com atributos selecionados</h6>
 							<div class="row">
 							</div>
-							<div class="row hidden" id="484"  style="overflow-x: scroll;">
-								<img src="img/j48unprunedonly.png" style="height: 400px; overflow: scroll;">
-							</div>
-							<div id="4844" style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
+							<div style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
 								<p class="left-align light" style="white-space:pre">=== Run information ===
 
 Scheme:       weka.classifiers.trees.SimpleCart -M 2.0 -N 5 -U -C 1.0 -S 1
@@ -6206,12 +6165,23 @@ Weighted Avg.    0.839    0.234    0.836      0.839    0.836      0.623    0.850
 							</div>
 						</div>
 					</div>
+          <div class="row">
+						<div class="col s12 center">
+							<h3><i class="mdi-content-send brown-text"></i></h3>
+							<p class="left-align light">
+								<img src="img/grafico4.png" height="810px" width="1300px">
+							</p>
+						</div>
+					</div>
+
 					<div class="row">
 						<div class="col s12 center">
 							<h3><i class="mdi-content-send brown-text"></i></h3>
 							<p class="left-align light">
-								Como é possível visualizar, a árvore da esquerda é menor e o desempenho melhor o que indica que para este dataset
-								a modificação de tal parâmetro teve um impacto levemente melhor
+								Como é possível visualizar, o maior valor médio de precisão foi o encontrado na árvore unpruned com atributos selecinados
+								seguido de perto pela árvore pruned com todos os atributos. A justificativa continua sendo parecida com a apresentada para o J48 já que 
+								árvores menores sofrem menos com o overfitting, então tanto a podada com todas as variáveis quanto a que não tinha tantas variáveis e não foi podada
+								eram compostas por árvores bem enxutas, o que explica por que a precisão ficou um pouco maior.
 							</p>
 						</div>
 					</div>
