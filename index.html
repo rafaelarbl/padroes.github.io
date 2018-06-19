@@ -11,11 +11,22 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+	
+	
+	
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre o Dataset </a></li>
+        <li><a href="#">Sobre os algoritmos </a></li>
+        <li><a href="#">Weka J48 </a></li>
+        <li><a href="#">Weka Simple Cart </a></li>
+        <li><a href="#">Discussão </a></li>
+        <li><a href="#">Conclusão </a></li>
+        <li><a href="#">Referências </a></li>
+        <li><a href="#"> </a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -41,7 +52,7 @@
         <br><br>
       </div>
     </div>
-    <div class="parallax"><img src="background5.jpeg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="img/bck3.jpg" alt="Unsplashed background img 1"></div>
   </div>
   
 			<script>
@@ -422,11 +433,15 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+			<h1 class="header col s12 light">Sobre os Algoritmos</h5>
+			<h5 class="center-align light"><br><br>
+				O dataset processado foi submetido a algoritmos de árvore de decisão.<br> Foram utilizados os algoritmos J48 do Weka e o Simple CART do Weka.<br>
+				O dataset foi processado de diferentes formas para a verificação das <br> melhores condições para a criação da melhor árvore de decisão.
+			</h2>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="img/bck1.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -434,9 +449,37 @@
 
       <div class="row">
         <div class="col s12 center">
+          <h4>Weka J48</h4>
+			<p class="left-align light">
+				O algoritmo J48, desenvolvido por Ross Quinlan,
+				constrói árvores de decisão a partir de um conjunto de dados de treinamento.
+				As árvores de decisão geradas pelo algoritmo podem ser utilizadas para classificação, logo são conhecidas como classificadores estatísticos.
+				A direita é mostrado o output do algoritmo quando este é rodado sobre todos os dados, com os parâmetros tal, tal e tal.
+				A esquerda estão sendo usados os mesmos parâmetros, só que alguma coisa foi alterada.
+			</p>
+        </div>
+      </div>
+	  
+      <div class="row">
+		<div class="col s5 left"  style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
+			<p class="left-align light">
+				Left
+			</p>
+		</div>
+		<div class="col s5 right"  style="height: 400px; overflow: scroll; background-color: rgba(0, 0, 0, 0.02);">
+			<p class="left-align light">
+				Right
+			</p>
+		</div>
+		
+	  </div>
+      <div class="row">
+        <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+			<p class="left-align light">
+				Como é possível visualizar, a árvore da esquerda é menor e o desempenho melhor o que indica que para este dataset
+				a modificação de tal parâmetro teve um impacto levemente melhor
+			</p>
         </div>
       </div>
 
@@ -448,45 +491,34 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h2 class="header col s12 light">Weka Simple Cart</h2>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="img/bck6.png" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer teal">
+  <footer class="page-footer cyan darken-4">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        <div class="col l8 s12">
+          <h5 class="white-text">Sobre</h5>
+          <p class="grey-text text-lighten-4">
+			Este trabalho foi desenvolvido por Rafaela Bennett Lippstein graduanda em Informática Biomédica
+			na Universidade Federal de Ciências da Saúde de Porto Alegre (UFCSPA) para a disciplina de Reconhecimento
+			de Padrões
+		  </p>
 
 
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col l4 s12 right-align">
+          <img src="img/ufcspa.png" height="175px;"></img>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      <!-- <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a> -->
       </div>
     </div>
   </footer>
